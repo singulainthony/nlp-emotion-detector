@@ -1,5 +1,5 @@
 import unittest
-import EmotionDetection.emotion_detection as emotionDetection
+import emotion_detection.emotion_detection as emotionDetection
 
 class TestEmotionDetection(unittest.TestCase):
     def test_dominant_emotion_joy(self):
