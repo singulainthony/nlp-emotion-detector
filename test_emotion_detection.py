@@ -23,4 +23,7 @@ class TestEmotionDetection(unittest.TestCase):
         self.assertEqual(emotions["dominant_emotion"], "fear")
 
 
-unittest.main()
+# To make sure that the unittest file only runs when the script is executed
+# directly (not imported as a module)
+if __name__ == '__main__':
+    unittest.main()
