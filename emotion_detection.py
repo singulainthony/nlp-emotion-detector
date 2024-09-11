@@ -6,8 +6,10 @@ def emotion_detector(text_to_analyze: str) -> str:
     """ 
     Run emotion detection using Watson NLP library.
 
-    NOTE: Currently, this code only works with IBM Cloud IDE! 
-          Otherwise, ConnectionError occurs.
+    NOTE: 
+    Currently, this code only works with IBM Cloud IDE!    
+    Otherwise, ConnectionError occurs.
+    I assume that I have to set up the connection (e.g. IBM account or similar).
     """
 
     # Get emotion analysis using Watson NLP Library
