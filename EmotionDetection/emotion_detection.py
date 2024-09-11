@@ -56,23 +56,33 @@ def emotion_detector(text_to_analyze: str) -> str:
     # text ='{"emotionPredictions":[{"emotion":{"anger":0.01364663, "disgust":0.0017160787, "fear":0.008986978, "joy":0.9719017, "sadness":0.055187024}, "target":"", "emotionMentions":[{"span":{"begin":0, "end":18, "text":"I love technology."}, "emotion":{"anger":0.01364663, "disgust":0.0017160787, "fear":0.008986978, "joy":0.9719017, "sadness":0.055187024}}]}], "producerId":{"name":"Ensemble Aggregated Emotion Workflow", "version":"0.0.1"}}'
     
     
-    # Convert JSON to Dictionary
-    responseTextDict = json.loads(response.text)
-    
-    # Extract set of emotions
-    emotions = responseTextDict["emotionPredictions"][0]["emotion"]
+    if response.status_code == 400:
+        analysisResult = {
+            'anger': None,
+            'disgust': None,
+            'fear': None,
+            'joy': None,
+            'sadness': None,
+            'dominant_emotion': None
+        }
+    else:
+        # Convert JSON to Dictionary
+        responseTextDict = json.loads(response.text)
+        
+        # Extract set of emotions
+        emotions = responseTextDict["emotionPredictions"][0]["emotion"]
+        
+        # Get Emotion-Key with highest score
+        keyMaxScore = max(emotions, key = emotions.get)
 
-    # Get Emotion-Key with highest score
-    keyMaxScore = max(emotions, key = emotions.get)
-
-    analysisResult = {
-        'anger': emotions["anger"],
-        'disgust': emotions["disgust"],
-        'fear': emotions["fear"],
-        'joy': emotions["joy"],
-        'sadness': emotions["sadness"],
-        'dominant_emotion': keyMaxScore
-    }
+        analysisResult = {
+            'anger': emotions["anger"],
+            'disgust': emotions["disgust"],
+            'fear': emotions["fear"],
+            'joy': emotions["joy"],
+            'sadness': emotions["sadness"],
+            'dominant_emotion': keyMaxScore
+        }
 
     return analysisResult
 
