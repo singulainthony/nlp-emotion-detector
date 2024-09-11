@@ -20,19 +20,25 @@ def emotion_analysis():
     # Required output format:
     # For the given statement, the system response is '<emotion1>': <score1>,
     # '<emotion2>': <score2>, '<emotionN>': <scoreN>. The dominant emotion is <emotion>.
-    response = "For the given statement, the system response is"
+    #
+    # Required output format when dominant_emotion == None:
+    # Invalid text! Please try again.
+    if analysisResult["dominant_emotion"] == None:
+        response = "Invalid text! Please try again!"
+    else:
+        response = "For the given statement, the system response is"
 
-    for key, value in analysisResult.items():
-        # dominant emotion is mentioned separately as its own sentence.
-        if key != "dominant_emotion":
-            response += f" '{key}': {value},"
-
-    # Replace last comma with point. If index is -1, no commas found.
-    last_comma_index = response.rfind(",")
-    if last_comma_index != -1:
-        response = response[:last_comma_index] + '.' + response[last_comma_index + 1:]
-    
-    response += f" The dominant emotion is {analysisResult['dominant_emotion']}."
+        for key, value in analysisResult.items():
+            # dominant emotion is mentioned separately as its own sentence.
+            if key != "dominant_emotion":
+                response += f" '{key}': {value},"
+            
+        # Replace last comma with point. If index is -1, no commas found.
+        last_comma_index = response.rfind(",")
+        if last_comma_index != -1:
+            response = response[:last_comma_index] + '.' + response[last_comma_index + 1:]
+        
+        response += f" The dominant emotion is {analysisResult['dominant_emotion']}."
 
     return response
 
