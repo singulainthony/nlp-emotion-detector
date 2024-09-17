@@ -1,4 +1,4 @@
-# Final Project: Emotion Detector with AI
+# Emotion Detector with AI
 
 ![Result I am having Fun](https://github.com/user-attachments/assets/f456f7a7-e396-4186-9ac3-4519f20eb047)
 
