@@ -6,6 +6,7 @@
 This repository contains an AI-based Text Emotion Detector Web Application created as part of IBM's "Python for AI & Development Project" course.<br>
 <br>
 Sentiment analysis is the process of analyzing digital text to determine if the emotional tone of the message is positive, negative, or neutral.<br>
+<br>
 Emotion detection extends the concept of sentiment analysis by extracting the finer emotions, like joy, sadness, anger, and so on, from statements rather than the simple polarity that sentiment analysis provides.<br>
 <br>
 <br>
