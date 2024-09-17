@@ -14,7 +14,7 @@ def render_homepage():
 
 
 @app.route('/emotionDetector', methods=["GET"])
-def emotion_analysis():
+def emotion_analysis() -> str:
     """ Analyze text and return emotion detection (analysis result) """
     text_to_analyze = request.args["textToAnalyze"]
     analysis_result = emotion_detector(text_to_analyze)
