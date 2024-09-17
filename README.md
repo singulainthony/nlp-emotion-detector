@@ -40,6 +40,7 @@ Course Provider: IBM<br>
 - GitHub
 - Python Testing Framework: Unittest
 - Python Web Framework: Flask
+- Static Code Analysis: PyLint
 - Watson NLP Library
 - IBM Cloud IDE
 <br>
