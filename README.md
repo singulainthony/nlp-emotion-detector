@@ -33,6 +33,7 @@ Course Provider: IBM<br>
 
 
 ### Tech Stack
+With regard to my role:
 - HTML
 - CSS
 - JavaScript
