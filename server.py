@@ -1,7 +1,7 @@
 """Server for Web Deployment"""
 
 from flask import Flask, render_template, request
-from emotion_detection.emotion_detection import emotion_detector
+from EmotionDetection.emotion_detection import emotion_detector
 
 
 app = Flask("Emotion Detection")
@@ -49,3 +49,4 @@ def emotion_analysis() -> str:
 # directly (not imported as a module)
 if __name__ == "__main__":
     app.run(debug = True)
+
